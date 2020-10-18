@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>converter</title>
+  <link rel="stylesheet" type="text/css" href="css/conv.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <div id="container"
+    style="text-align: justify; margin-top: 100px; width: 30%; background-color: blue; height: 200px; border: 1px solid transparent;">
+    <p style="color: white; margin-left: 60px; font-size: 18px;">Enter Temperature in Celcius</p>
+    <p id="amount" style="color: white; margin-left: 60px;">Temperature[celcius]: <input type="number"
+        id="celc-input" style="background-color: white; text-align: center;" onblur="computeTemp()"></p>
+    <!-- <button id="compute-kg" style="background-color: rgb(101, 190, 49); text-align: center; border-radius: 5px; padding: 5px; font-size: 18px;" onclick="computeKg()">Compute Kg</button> -->
+
+    <h5 style="color: white; text-align: center; font-size: 20px;" id="fahrent"></h5>
+  </div>
+
+  <script>
+    //  c/5 = (f-32)/9
+    // f = (9c+160)/5
+
+    function computeTemp() {
+      let celc = document.getElementById('celc-input').value;
+      const result = document.getElementById('fahrent');
+      f = ((9 * celc) + 160) / 5;
+      result.innerHTML = `${celc}<sup>0</sup>C is ${f}<sup>0</sup>F`
+    }
+
+
+  </script>
+</body>
+
+</html>
